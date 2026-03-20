@@ -1,4 +1,4 @@
-(function () {
+﻿(function () {
   'use strict';
 
   var navToggle = document.getElementById('navToggle');
@@ -37,52 +37,12 @@
     else field.classList.remove('field-invalid');
   }
 
-  var quickQuoteForm = document.getElementById('quickQuoteForm');
-  if (quickQuoteForm) {
-    quickQuoteForm.addEventListener('submit', function (e) {
-      var name = quickQuoteForm.querySelector('#name');
-      var phone = quickQuoteForm.querySelector('#phone');
-      var postcode = quickQuoteForm.querySelector('#postcode');
-
-      var postPattern = /^[A-Za-z]{1,2}[0-9Rr][0-9A-Za-z]?\s?[0-9][ABD-HJLNP-UW-Zabd-hjlnp-uw-z]{2}$/;
-      var ok = true;
-
-      if (!name || name.value.trim().length < 2) {
-        ok = false;
-        setInvalid(name, true);
-      } else {
-        setInvalid(name, false);
-      }
-
-      if (!phone || phone.value.trim().length < 8) {
-        ok = false;
-        setInvalid(phone, true);
-      } else {
-        setInvalid(phone, false);
-      }
-
-      if (!postcode || !postPattern.test(postcode.value.trim())) {
-        ok = false;
-        setInvalid(postcode, true);
-      } else {
-        setInvalid(postcode, false);
-      }
-
-      if (!ok) {
-        e.preventDefault();
-      }
-    });
-  }
-
   var drivewayCalc = document.getElementById('drivewayCalc');
   var calcReset = document.getElementById('calcReset');
   var calcResult = document.getElementById('calcResult');
   var calcRange = calcResult ? calcResult.querySelector('.result-range') : null;
   var calcMeta = calcResult ? calcResult.querySelector('.result-meta') : null;
   var calcWhatsapp = document.getElementById('calcWhatsapp');
-  var blendPreview = document.getElementById('blendPreview');
-  var blendTag = document.getElementById('blendTag');
-  var blendDescription = document.getElementById('blendDescription');
 
   function gbp(value) {
     return new Intl.NumberFormat('en-GB', { style: 'currency', currency: 'GBP', maximumFractionDigits: 0 }).format(value);
@@ -90,7 +50,7 @@
 
   function makeWhatsappLink(low, high, area) {
     var text = 'Hi ResinPro Cheshire, I used your calculator. Area: ' + area.toFixed(1) + 'm2. Estimated range: ' + gbp(low) + ' to ' + gbp(high) + '. Please can I get a survey?';
-    return 'https://wa.me/447700900000?text=' + encodeURIComponent(text);
+    return 'https://wa.me/447852827418?text=' + encodeURIComponent(text);
   }
 
   function calculateEstimate(length, width, surface, design, access) {
@@ -182,25 +142,6 @@
       calcWhatsapp.classList.add('is-disabled');
       calcWhatsapp.setAttribute('aria-disabled', 'true');
       calcWhatsapp.setAttribute('href', '#');
-    });
-  }
-
-  if (blendPreview && blendTag && blendDescription) {
-    document.querySelectorAll('.blend-btn').forEach(function (btn) {
-      btn.addEventListener('click', function () {
-        var blend = btn.getAttribute('data-blend');
-        var label = btn.getAttribute('data-label');
-        var description = btn.getAttribute('data-description');
-
-        blendPreview.setAttribute('data-blend', blend || 'amber');
-        blendTag.textContent = label || 'Amber Arc';
-        blendDescription.textContent = description || '';
-
-        document.querySelectorAll('.blend-btn').forEach(function (item) {
-          item.classList.remove('is-active');
-        });
-        btn.classList.add('is-active');
-      });
     });
   }
 
