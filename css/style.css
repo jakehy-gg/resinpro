@@ -1020,6 +1020,42 @@ h1 {
   transform: translateY(-1px);
 }
 
+.mob-cta-bar {
+  display: none;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 120;
+  height: 64px;
+  background: #fff;
+  border-top: 1px solid var(--line);
+  box-shadow: 0 -4px 20px rgba(9, 36, 67, 0.08);
+}
+
+.mob-cta-bar__call {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  font-weight: 800;
+  font-size: 0.8rem;
+  color: var(--navy-800);
+}
+
+.mob-cta-bar__wa {
+  flex: 1.5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  font-weight: 800;
+  font-size: 0.88rem;
+  color: #fff;
+  background: linear-gradient(120deg, var(--wa), var(--wa-2));
+}
+
 .reveal,
 .reveal-delay,
 .reveal-delay-2 {
@@ -1135,8 +1171,20 @@ h1 {
 
 @media (max-width: 759px) {
   body {
-    padding-bottom: 72px;
+    padding-bottom: 64px;
   }
+
+  /* ── Mobile conversion funnel — optimised section order ── */
+  .metrics { order: 2; }
+  .project-showcase { order: 3; }
+  .signature { order: 4; }
+  .calc { order: 5; }
+  .blend-lab { order: 6; }
+  .services { order: 7; }
+  .reviews { order: 8; }
+
+  .wa-float { display: none; }
+  .mob-cta-bar { display: flex; }
 
   /* ── Showcase: restore tall, cancel wide, last item fills row ── */
   .shot--wide {
