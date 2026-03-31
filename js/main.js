@@ -56,20 +56,11 @@
   function calculateEstimate(length, width, surface, design, access) {
     var area = length * width;
 
-    var rateLow = 72;
-    var rateHigh = 98;
+    var rateLow = 150;
+    var rateHigh = 170;
 
-    var baseLow = area * rateLow;
-    var baseHigh = area * rateHigh;
-
-    var factor = surface * design * access;
-
-    var adjustedLow = baseLow * factor;
-    var adjustedHigh = baseHigh * factor;
-
-    var mobilization = area < 30 ? 450 : 0;
-    adjustedLow += mobilization;
-    adjustedHigh += mobilization;
+    var adjustedLow = area * rateLow;
+    var adjustedHigh = area * rateHigh;
 
     return {
       area: area,

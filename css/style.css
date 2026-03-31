@@ -88,8 +88,12 @@ main {
   order: 3;
 }
 
+.vuba-strip {
+  order: 4;
+}
+
 .reviews {
-  order: 8;
+  order: 9;
 }
 
 .project-showcase {
@@ -97,32 +101,32 @@ main {
 }
 
 .calc {
-  order: 7;
+  order: 8;
 }
 
 .services {
-  order: 6;
+  order: 7;
 }
 
 .signature {
-  order: 4;
+  order: 5;
 }
 
 .blend-lab {
-  order: 9;
+  order: 10;
 }
 
 .how-it-works {
-  order: 5;
+  order: 6;
   background: #ffffff;
 }
 
 .locations {
-  order: 10;
+  order: 11;
 }
 
 .final-cta {
-  order: 11;
+  order: 12;
 }
 
 .skip-link {
@@ -398,7 +402,7 @@ h1 {
 }
 
 .project-showcase {
-  padding-block: clamp(54px, 6vw, 90px);
+  padding-block: clamp(54px, 6vw, 90px) 28px;
   background: #f8f4ed;
 }
 
@@ -485,12 +489,24 @@ h1 {
 
 .metrics {
   background: #f8f4ed;
+  padding-block-start: 28px;
 }
 
 .metrics__grid {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 12px;
+}
+
+.sig-reason--vuba {
+  align-items: center;
+}
+
+.sig-reason__badge {
+  width: 70px;
+  height: auto;
+  flex-shrink: 0;
+  margin-left: auto;
 }
 
 .metrics article {
@@ -518,8 +534,43 @@ h1 {
 }
 
 .signature__head {
-  max-width: 640px;
+  max-width: 760px;
   margin-bottom: clamp(28px, 4vw, 44px);
+}
+
+.vuba-strip {
+  background: transparent;
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+  padding-block: 18px;
+}
+
+.vuba-strip__inner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 24px;
+}
+
+.vuba-strip__label {
+  font-size: 0.7rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--muted);
+  font-weight: 600;
+}
+
+.vuba-strip__divider {
+  width: 1px;
+  height: 36px;
+  background: var(--line);
+  flex-shrink: 0;
+}
+
+.vuba-strip img {
+  width: 64px;
+  height: auto;
+  flex-shrink: 0;
 }
 
 .signature__reasons {
@@ -1087,6 +1138,8 @@ h1 {
   opacity: 0.95;
 }
 
+
+
 .footer-grid p {
   margin-top: 10px;
   color: #b8cee8;
@@ -1357,15 +1410,39 @@ h1 {
   /* ── Mobile conversion funnel — optimised section order ── */
   .metrics { order: 2; }
   .project-showcase { order: 3; }
-  .signature { order: 4; }
-  .how-it-works { order: 5; }
-  .calc { order: 6; }
-  .blend-lab { order: 7; }
-  .services { order: 8; }
-  .reviews { order: 9; }
+  .vuba-strip { order: 4; }
+  .signature { order: 5; }
+  .how-it-works { order: 6; }
+  .calc { order: 7; }
+  .blend-lab { order: 8; }
+  .services { order: 9; }
+  .reviews { order: 10; }
+
+  .vuba-strip__inner {
+    justify-content: center;
+    gap: 32px;
+    padding-inline: 0;
+  }
+
+  .vuba-strip__label {
+    font-size: 0.65rem;
+    letter-spacing: 0.16em;
+  }
+
+  .vuba-strip__divider {
+    display: none;
+  }
+
+  .vuba-strip img {
+    width: 56px;
+  }
 
   .wa-float { display: none; }
   .mob-cta-bar { display: flex; }
+
+  .sig-reason__badge {
+    width: 55px;
+  }
 
   /* ── Showcase: restore tall, cancel wide, last item fills row ── */
   .shot--wide {
