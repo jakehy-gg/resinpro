@@ -53,19 +53,15 @@
     return 'https://wa.me/447852827418?text=' + encodeURIComponent(text);
   }
 
-  function calculateEstimate(length, width, surface, design, access) {
+  function calculateEstimate(length, width) {
     var area = length * width;
-
     var rateLow = 150;
     var rateHigh = 170;
 
-    var adjustedLow = area * rateLow;
-    var adjustedHigh = area * rateHigh;
-
     return {
       area: area,
-      low: Math.round(adjustedLow),
-      high: Math.round(adjustedHigh)
+      low: Math.round(area * rateLow),
+      high: Math.round(area * rateHigh)
     };
   }
 
@@ -75,15 +71,9 @@
 
       var lengthField = document.getElementById('length');
       var widthField = document.getElementById('width');
-      var surfaceField = document.getElementById('surface');
-      var designField = document.getElementById('design');
-      var accessField = document.getElementById('access');
 
       var length = parseFloat(lengthField.value);
       var width = parseFloat(widthField.value);
-      var surface = parseFloat(surfaceField.value);
-      var design = parseFloat(designField.value);
-      var access = parseFloat(accessField.value);
 
       var valid = true;
 
@@ -110,10 +100,10 @@
         return;
       }
 
-      var result = calculateEstimate(length, width, surface, design, access);
+      var result = calculateEstimate(length, width);
 
       calcRange.textContent = gbp(result.low) + ' - ' + gbp(result.high);
-      calcMeta.textContent = 'Based on approximately ' + result.area.toFixed(1) + 'm2 including typical prep and installation factors.';
+      calcMeta.textContent = 'Based on approximately ' + result.area.toFixed(1) + 'm2. Final price confirmed after a free on-site survey.';
 
       calcWhatsapp.classList.remove('is-disabled');
       calcWhatsapp.removeAttribute('aria-disabled');
@@ -124,7 +114,7 @@
 
     calcReset.addEventListener('click', function () {
       drivewayCalc.reset();
-      ['length', 'width', 'surface', 'design', 'access'].forEach(function (id) {
+      ['length', 'width'].forEach(function (id) {
         var el = document.getElementById(id);
         setInvalid(el, false);
       });

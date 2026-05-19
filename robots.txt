@@ -1,4 +1,39 @@
 User-agent: *
 Allow: /
+Disallow: /thank-you/
 
-Sitemap: https://resinpro-installations.com/sitemap.xml
+# AI crawlers — explicitly welcome for indexing and citation
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: anthropic-ai
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: Googlebot-Image
+Allow: /
+
+User-agent: CCBot
+Allow: /
+
+User-agent: Amazonbot
+Allow: /
+
+User-agent: Bytespider
+Allow: /
+
+User-agent: Meta-ExternalAgent
+Allow: /
+
+Sitemap: https://resinpro-cheshire.co.uk/sitemap.xml
