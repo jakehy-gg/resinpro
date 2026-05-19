@@ -205,6 +205,11 @@ main {
   text-align: center;
 }
 
+.site-nav .btn-nav:hover {
+  background: linear-gradient(120deg, #0d3566, #1a4a78);
+  color: #fff;
+}
+
 .hero {
   position: relative;
   min-height: 80vh;
@@ -353,10 +358,18 @@ h1 {
   padding: 14px 28px;
 }
 
+.btn--primary:hover {
+  background: linear-gradient(120deg, #d4764f, #a04826);
+}
+
 .btn--ghost {
   border-color: rgba(255, 255, 255, 0.54);
   color: #ffffff;
   background: rgba(255, 255, 255, 0.08);
+}
+
+.btn--ghost:hover {
+  background: rgba(255, 255, 255, 0.18);
 }
 
 .btn--ghost-dark {
@@ -365,9 +378,18 @@ h1 {
   background: #fff;
 }
 
+.btn--ghost-dark:hover {
+  background: #eef3fa;
+  border-color: var(--navy-800);
+}
+
 .btn--wa {
   color: #fff;
   background: linear-gradient(120deg, var(--wa), var(--wa-2));
+}
+
+.btn--wa:hover {
+  filter: brightness(1.08);
 }
 
 .btn--wa.is-disabled {
