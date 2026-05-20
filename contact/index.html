@@ -111,12 +111,11 @@
             Thanks &mdash; your enquiry is through. We&rsquo;ll be in touch today.
           </div>
           <h2 class="contact-form__title">Request a Free Survey</h2>
-          <form id="contactForm" action="https://formsubmit.co/hello@resinpro-cheshire.co.uk" method="POST">
-            <input type="hidden" name="_subject" value="New enquiry from ResinPro website" />
-            <input type="hidden" name="_captcha" value="true" />
-            <input type="hidden" name="_template" value="table" />
-            <input type="hidden" name="_next" value="https://resinpro-cheshire.co.uk/thank-you/" />
-            <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off" />
+          <form id="contactForm" action="https://api.web3forms.com/submit" method="POST">
+            <input type="hidden" name="access_key" value="eef675c6-b781-4b3a-b428-0fb99372f295" />
+            <input type="hidden" name="subject" value="New enquiry from ResinPro website" />
+            <input type="hidden" name="redirect" value="https://resinpro-cheshire.co.uk/thank-you/" />
+            <input type="checkbox" name="botcheck" style="display:none" tabindex="-1" autocomplete="off" />
 
             <label for="name">Full Name *</label>
             <input type="text" id="name" name="name" required autocomplete="name" placeholder="e.g. Sarah Williams" />

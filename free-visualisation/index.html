@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>Free Driveway Visualisation | ResinPro Cheshire</title>
+  <meta name="description" content="See exactly what your driveway could look like in resin — before you spend a penny. Send us a photo on WhatsApp and we'll send back a free visualisation the same day." />
+  <meta name="robots" content="noindex,nofollow" />
+  <link rel="icon" href="../images/favicon.svg" type="image/svg+xml" />
+  <meta name="theme-color" content="#092443" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700;9..144,800&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../css/style.css?v=3" />
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-DSER71Y9KT"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-DSER71Y9KT');
+  </script>
+  <style>
+    /* Landing page overrides — no nav distractions */
+    .lp-header {
+      background: var(--cream-100);
+      border-bottom: 1px solid rgba(9,36,67,0.1);
+      padding: 16px 0;
+      text-align: center;
+    }
+    .lp-header .brand img {
+      height: 40px;
+      width: auto;
+    }
+    .lp-hero {
+      background: var(--cream-100);
+      padding: clamp(48px, 7vw, 88px) 0 clamp(40px, 5vw, 64px);
+      text-align: center;
+    }
+    .lp-hero .kicker {
+      color: var(--teal-500);
+      font-size: .85rem;
+      font-weight: 700;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      margin-bottom: 16px;
+    }
+    .lp-hero h1 {
+      font-family: var(--font-head);
+      font-size: clamp(2rem, 5vw, 3.4rem);
+      color: var(--navy-900);
+      line-height: 1.15;
+      max-width: 18ch;
+      margin: 0 auto 20px;
+    }
+    .lp-hero h1 em {
+      font-style: normal;
+      color: var(--teal-500);
+    }
+    .lp-hero__sub {
+      color: var(--muted);
+      font-size: clamp(1rem, 2vw, 1.15rem);
+      max-width: 48ch;
+      margin: 0 auto 36px;
+      line-height: 1.6;
+    }
+    .lp-hero__cta {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 12px;
+    }
+    .lp-hero__cta .btn {
+      font-size: 1.05rem;
+      padding: 16px 36px;
+    }
+    .lp-hero__nudge {
+      color: var(--muted);
+      font-size: .82rem;
+      margin-top: 4px;
+    }
+    /* Before/after */
+    .lp-compare {
+      background: #fff;
+      padding: clamp(40px, 5vw, 64px) 0;
+    }
+    .lp-compare__inner {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 16px;
+      max-width: 860px;
+      margin: 0 auto;
+    }
+    @media (min-width: 660px) {
+      .lp-compare__inner { grid-template-columns: 1fr 48px 1fr; gap: 0; align-items: center; }
+      .lp-compare__arrow { transform: none !important; }
+    }
+    .lp-compare__shot {
+      position: relative;
+      border-radius: var(--radius-m);
+      overflow: hidden;
+      aspect-ratio: 3 / 2;
+    }
+    .lp-compare__shot img { width: 100%; height: 100%; object-fit: cover; display: block; }
+    .lp-compare__label {
+      position: absolute;
+      bottom: 14px;
+      left: 14px;
+      background: rgba(9,36,67,0.88);
+      color: #fff;
+      font-weight: 700;
+      font-size: .78rem;
+      padding: 5px 14px;
+      border-radius: var(--radius-pill);
+      letter-spacing: .07em;
+      text-transform: uppercase;
+    }
+    .lp-compare__label--after { background: var(--teal-500); }
+    .lp-compare__arrow {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: rgba(9,36,67,0.25);
+      transform: rotate(90deg);
+    }
+    .lp-compare__caption {
+      text-align: center;
+      color: var(--muted);
+      font-size: .82rem;
+      margin-top: 18px;
+      font-style: italic;
+    }
+    /* Steps */
+    .lp-steps {
+      background: var(--cream-100);
+      padding: clamp(48px, 6vw, 80px) 0;
+    }
+    .lp-steps__head {
+      text-align: center;
+      margin-bottom: 40px;
+    }
+    .lp-steps__head h2 {
+      font-family: var(--font-head);
+      font-size: clamp(1.6rem, 3vw, 2.2rem);
+      color: var(--navy-900);
+    }
+    .lp-steps__head p {
+      color: var(--muted);
+      margin-top: 10px;
+      font-size: .97rem;
+    }
+    .lp-steps__grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 24px;
+    }
+    .lp-step {
+      background: #fff;
+      border-radius: var(--radius-m);
+      padding: 28px 24px;
+      text-align: center;
+      box-shadow: 0 2px 10px rgba(0,0,0,.06);
+    }
+    .lp-step__num {
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      background: var(--navy-900);
+      color: #fff;
+      font-family: var(--font-head);
+      font-size: 1.2rem;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 16px;
+    }
+    .lp-step h3 {
+      font-family: var(--font-head);
+      font-size: 1.05rem;
+      color: var(--navy-900);
+      margin-bottom: 8px;
+    }
+    .lp-step p {
+      font-size: .9rem;
+      color: var(--muted);
+      line-height: 1.55;
+    }
+    /* Social proof */
+    .lp-proof {
+      background: #fff;
+      padding: clamp(40px, 5vw, 64px) 0;
+    }
+    .lp-proof__head {
+      text-align: center;
+      margin-bottom: 32px;
+    }
+    .lp-proof__head h2 {
+      font-family: var(--font-head);
+      font-size: clamp(1.4rem, 2.5vw, 1.9rem);
+      color: var(--navy-900);
+    }
+    .lp-proof__stars {
+      color: #f4a61d;
+      font-size: 1.3rem;
+      letter-spacing: 2px;
+      margin-bottom: 6px;
+    }
+    .lp-proof__grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 20px;
+    }
+    .lp-review {
+      background: var(--cream-100);
+      border-radius: var(--radius-m);
+      padding: 24px;
+    }
+    .lp-review p { color: var(--navy-900); font-size: .93rem; line-height: 1.6; margin-bottom: 12px; }
+    .lp-review cite { color: var(--muted); font-size: .83rem; font-style: normal; font-weight: 600; }
+    /* Final CTA */
+    .lp-final {
+      background: var(--navy-900);
+      padding: clamp(56px, 7vw, 96px) 0;
+      text-align: center;
+    }
+    .lp-final h2 {
+      font-family: var(--font-head);
+      font-size: clamp(1.8rem, 4vw, 2.8rem);
+      color: #fff;
+      max-width: 20ch;
+      margin: 0 auto 16px;
+      line-height: 1.2;
+    }
+    .lp-final p {
+      color: rgba(255,255,255,0.6);
+      font-size: .97rem;
+      margin-bottom: 32px;
+    }
+    .lp-final .btn {
+      font-size: 1.08rem;
+      padding: 18px 40px;
+    }
+    .lp-final__nudge {
+      color: rgba(255,255,255,0.35);
+      font-size: .8rem;
+      margin-top: 14px;
+    }
+    /* Footer strip */
+    .lp-footer {
+      background: #081f3a;
+      padding: 18px 0;
+      text-align: center;
+    }
+    .lp-footer p {
+      color: rgba(255,255,255,0.35);
+      font-size: .8rem;
+    }
+    .lp-footer a { color: rgba(255,255,255,0.5); text-decoration: underline; }
+  </style>
+</head>
+
+<body>
+
+  <!-- Minimal header — logo only -->
+  <header class="lp-header">
+    <a class="brand" href="/" aria-label="ResinPro Cheshire homepage">
+      <img src="../images/logo.png" alt="ResinPro Cheshire" width="160" height="76" loading="eager" decoding="async" />
+    </a>
+  </header>
+
+  <main>
+
+    <!-- HERO -->
+    <section class="lp-hero">
+      <div class="container">
+        <p class="kicker">Free &bull; No Commitment &bull; Same Day</p>
+        <h1>See Your Driveway in Resin &mdash; <em>Before You Spend a Penny</em></h1>
+        <p class="lp-hero__sub">Send us a photo of your driveway on WhatsApp. We&rsquo;ll send back a realistic visualisation showing exactly how it could look with resin &mdash; completely free.</p>
+        <div class="lp-hero__cta">
+          <a class="btn btn--wa" href="https://wa.me/447852827418?text=Hi%20ResinPro%20Cheshire,%20I%27d%20love%20a%20free%20visualisation%20of%20my%20driveway.%20I%27ll%20send%20you%20a%20photo!" target="_blank" rel="noopener noreferrer">
+            WhatsApp Us Your Photo &rarr;
+          </a>
+          <p class="lp-hero__nudge">No obligation &mdash; we&rsquo;re usually back the same day</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- BEFORE / AFTER -->
+    <section class="lp-compare">
+      <div class="container">
+        <div class="lp-compare__inner">
+          <div class="lp-compare__shot">
+            <img src="../images/rpc/visualisebefore.png" alt="Driveway before resin bound installation" loading="lazy" decoding="async">
+            <span class="lp-compare__label">Before</span>
+          </div>
+          <div class="lp-compare__arrow" aria-hidden="true">
+            <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+          </div>
+          <div class="lp-compare__shot">
+            <img src="../images/rpc/visualiseafter.png" alt="Same driveway visualised with resin bound surface" loading="lazy" decoding="async">
+            <span class="lp-compare__label lp-compare__label--after">After</span>
+          </div>
+        </div>
+        <p class="lp-compare__caption">An example of the visualisation we send back &mdash; your driveway, your colours.</p>
+      </div>
+    </section>
+
+    <!-- HOW IT WORKS -->
+    <section class="lp-steps">
+      <div class="container">
+        <div class="lp-steps__head">
+          <p class="kicker" style="color:var(--teal-500);">How It Works</p>
+          <h2>Three steps. Takes 30 seconds.</h2>
+          <p>No forms, no email, no waiting on hold.</p>
+        </div>
+        <div class="lp-steps__grid">
+          <div class="lp-step">
+            <div class="lp-step__num">1</div>
+            <h3>Take a photo</h3>
+            <p>Snap a photo of your current driveway from the street or front door.</p>
+          </div>
+          <div class="lp-step">
+            <div class="lp-step__num">2</div>
+            <h3>Send it on WhatsApp</h3>
+            <p>Message us the photo. Let us know if you have a colour in mind or we&rsquo;ll suggest what works best.</p>
+          </div>
+          <div class="lp-step">
+            <div class="lp-step__num">3</div>
+            <h3>See your transformation</h3>
+            <p>We send back a visualisation showing your actual driveway in resin &mdash; usually the same day.</p>
+          </div>
+        </div>
+        <div style="text-align:center;margin-top:36px;">
+          <a class="btn btn--wa" href="https://wa.me/447852827418?text=Hi%20ResinPro%20Cheshire,%20I%27d%20love%20a%20free%20visualisation%20of%20my%20driveway.%20I%27ll%20send%20you%20a%20photo!" target="_blank" rel="noopener noreferrer">
+            Get My Free Visualisation &rarr;
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- SOCIAL PROOF -->
+    <section class="lp-proof">
+      <div class="container">
+        <div class="lp-proof__head">
+          <p class="lp-proof__stars">&#9733;&#9733;&#9733;&#9733;&#9733;</p>
+          <h2>Trusted by homeowners across Cheshire</h2>
+        </div>
+        <div class="lp-proof__grid">
+          <div class="lp-review">
+            <p class="lp-proof__stars" style="font-size:1rem;margin-bottom:8px;">&#9733;&#9733;&#9733;&#9733;&#9733;</p>
+            <p>&ldquo;I had my driveway done after seeing them complete the British Legion project in Penyffordd. I couldn&rsquo;t fault them or recommend them enough &mdash; it looks amazing!&rdquo;</p>
+            <cite>&mdash; Laura Halstead</cite>
+          </div>
+          <div class="lp-review">
+            <p class="lp-proof__stars" style="font-size:1rem;margin-bottom:8px;">&#9733;&#9733;&#9733;&#9733;&#9733;</p>
+            <p>&ldquo;Fantastic job from start to finish. They helped us choose the right colours, communication was excellent, and they went above and beyond. The driveway looks incredible.&rdquo;</p>
+            <cite>&mdash; Kimberley Ravazzolo</cite>
+          </div>
+          <div class="lp-review">
+            <p class="lp-proof__stars" style="font-size:1rem;margin-bottom:8px;">&#9733;&#9733;&#9733;&#9733;&#9733;</p>
+            <p>&ldquo;They upgraded our back garden, front driveway and pathways. The resin quality is brilliant and drains perfectly. The team were hard working, on time and polite throughout.&rdquo;</p>
+            <cite>&mdash; Richard Hughes</cite>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FINAL CTA -->
+    <section class="lp-final">
+      <div class="container">
+        <h2>Ready to see your driveway transformed?</h2>
+        <p>Free, no commitment &mdash; just send us a photo and see for yourself.</p>
+        <a class="btn btn--wa" href="https://wa.me/447852827418?text=Hi%20ResinPro%20Cheshire,%20I%27d%20love%20a%20free%20visualisation%20of%20my%20driveway.%20I%27ll%20send%20you%20a%20photo!" target="_blank" rel="noopener noreferrer">
+          WhatsApp Us Your Photo &rarr;
+        </a>
+        <p class="lp-final__nudge">Or call us on <a href="tel:+441244960112" style="color:rgba(255,255,255,0.5);">01244 960112</a></p>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="lp-footer">
+    <div class="container">
+      <p>&copy; <span id="yearNow">2026</span> ResinPro Cheshire &nbsp;&middot;&nbsp; <a href="/privacy/">Privacy Policy</a></p>
+    </div>
+  </footer>
+
+  <script src="../js/main.js?v=2" defer></script>
+  <script>document.getElementById('yearNow').textContent = new Date().getFullYear();</script>
+</body>
+</html>
