@@ -114,7 +114,7 @@
           <form id="contactForm" action="https://api.web3forms.com/submit" method="POST">
             <input type="hidden" name="access_key" value="eef675c6-b781-4b3a-b428-0fb99372f295" />
             <input type="hidden" name="subject" value="New enquiry from ResinPro website" />
-            <input type="hidden" name="redirect" value="https://resinpro-cheshire.co.uk/thank-you/" />
+            <input type="hidden" name="from_page" value="contact" />
             <input type="checkbox" name="botcheck" style="display:none" tabindex="-1" autocomplete="off" />
 
             <label for="name">Full Name *</label>
@@ -180,17 +180,30 @@
       var form = document.getElementById('contactForm');
       var btn = document.getElementById('contactSubmit');
       if (form && btn) {
-        form.addEventListener('submit', function () {
+        form.addEventListener('submit', function (e) {
+          e.preventDefault();
           btn.disabled = true;
           btn.textContent = 'Sending\u2026';
+          fetch('https://api.web3forms.com/submit', {
+            method: 'POST',
+            body: new FormData(form)
+          })
+          .then(function (res) { return res.json(); })
+          .then(function (json) {
+            if (json.success) {
+              window.location.href = '/thank-you/';
+            } else {
+              btn.disabled = false;
+              btn.textContent = 'Send My Enquiry \u2192';
+              alert('Something went wrong. Please try again or call us on 01244 960112.');
+            }
+          })
+          .catch(function () {
+            btn.disabled = false;
+            btn.textContent = 'Send My Enquiry \u2192';
+            alert('Something went wrong. Please try again or call us on 01244 960112.');
+          });
         });
-      }
-      if (new URLSearchParams(window.location.search).get('sent') === 'true') {
-        var success = document.getElementById('formSuccess');
-        if (success) {
-          success.hidden = false;
-          success.scrollIntoView({ behavior: 'smooth', block: 'center' });
-        }
       }
     })();
   </script>
