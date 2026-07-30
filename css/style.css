@@ -1518,9 +1518,51 @@ h1 {
   }
 }
 
+/* ── Mobile sticky contact bar ── */
+.mob-cta-bar {
+  display: none;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 120;
+  height: calc(64px + env(safe-area-inset-bottom, 0px));
+  padding-bottom: env(safe-area-inset-bottom, 0px);
+  background: #fff;
+  border-top: 1px solid var(--line);
+  box-shadow: 0 -4px 20px rgba(9, 36, 67, 0.08);
+}
+
+.mob-cta-bar__call {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  font-weight: 800;
+  font-size: 0.8rem;
+  color: var(--navy-800);
+}
+
+.mob-cta-bar__wa {
+  flex: 1.5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  font-weight: 800;
+  font-size: 0.88rem;
+  color: #fff;
+  background: linear-gradient(120deg, var(--wa), var(--wa-2));
+}
+
 @media (max-width: 759px) {
   body {
     padding-bottom: calc(64px + env(safe-area-inset-bottom, 0px));
+  }
+
+  .mob-cta-bar {
+    display: flex;
   }
 
   /* ── Homepage mobile section ordering ── */
