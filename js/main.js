@@ -56,7 +56,7 @@
   function calculateEstimate(length, width) {
     var area = length * width;
     var rateLow = 150;
-    var rateHigh = 170;
+    var rateHigh = 190;
 
     return {
       area: area,
