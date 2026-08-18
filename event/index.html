@@ -605,8 +605,8 @@
         } else if (photoBlob) {
           /* attachment may be rejected on some plans - retry without it so the lead isn't lost */
           photoBlob = null;
+          document.getElementById('f_photo').value = 'Upload failed - please ask them to WhatsApp a photo';
           fd = new FormData(form);
-          fd.append('Photo', 'Upload failed - please ask them to WhatsApp a photo');
           return fetch('https://api.web3forms.com/submit', { method:'POST', body:fd })
             .then(function(r){ return r.json(); })
             .then(function(j2){ if (j2.success){ show('done'); } else { failed(); } });
