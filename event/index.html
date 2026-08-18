@@ -1,0 +1,626 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<title>Free Driveway Visualisation | ResinPro Cheshire</title>
+<meta name="description" content="Scan, answer three quick questions and upload a photo — we'll send back a free visualisation of your own driveway in resin." />
+<meta name="robots" content="noindex,nofollow" />
+<meta name="theme-color" content="#092443" />
+<link rel="icon" href="/favicon.ico" sizes="any" />
+<link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png" />
+<link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+<meta property="og:title" content="Free Driveway Visualisation | ResinPro Cheshire" />
+<meta property="og:description" content="Three quick questions and a photo. See your own driveway transformed in resin — free." />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://resinpro-cheshire.co.uk/event/" />
+<meta property="og:site_name" content="ResinPro Cheshire" />
+<meta property="og:locale" content="en_GB" />
+<meta property="og:image" content="https://resinpro-cheshire.co.uk/images/og/quote-before-after-og.jpg" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-DSER71Y9KT"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-DSER71Y9KT');
+</script>
+
+<style>
+  :root{
+    --navy:#0b2947; --navy-2:#123a63; --teal:#1f7a77; --teal-2:#2a9995;
+    --clay:#c56d4a; --clay-2:#ad5836;
+    --cream:#faf7f2; --line:#e6ded1; --line-2:#d3dae4; --vuba:#0d567d;
+    --ink:#17263c; --muted:#66788f;
+    --wa:#25d366; --wa-2:#12a750;
+    --f-body:'Plus Jakarta Sans',system-ui,-apple-system,Segoe UI,sans-serif;
+    --f-head:'Fraunces',Georgia,serif;
+    --sh-1:0 1px 2px rgba(11,41,71,.05), 0 4px 14px rgba(11,41,71,.06);
+    --sh-2:0 12px 30px rgba(11,41,71,.13);
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{-webkit-text-size-adjust:100%}
+  body{
+    font-family:var(--f-body); color:var(--ink); background:var(--cream);
+    line-height:1.55; -webkit-font-smoothing:antialiased;
+    padding-bottom:calc(28px + env(safe-area-inset-bottom,0px));
+  }
+  img,picture,svg{display:block;max-width:100%}
+  button{font:inherit;color:inherit;background:none;border:none;cursor:pointer}
+
+  /* ---------- header + progress ---------- */
+  .bar{
+    position:sticky; top:0; z-index:50; background:rgba(255,255,255,.94);
+    backdrop-filter:saturate(160%) blur(8px);
+    border-bottom:1px solid var(--line); padding:11px 0 0;
+  }
+  .bar__in{display:flex;align-items:center;justify-content:center;padding-bottom:11px}
+  .bar img{height:30px;width:auto}
+  .track{height:3px;background:var(--line)}
+  .track__fill{height:100%;width:0;background:linear-gradient(90deg,var(--teal),var(--teal-2));
+    transition:width .5s cubic-bezier(.4,0,.2,1)}
+
+  .wrap{width:min(480px,calc(100% - 34px));margin-inline:auto}
+
+  /* ---------- steps ---------- */
+  .step{display:none;padding:26px 0 40px}
+  .step.on{display:block;animation:fade .3s ease both}
+  @keyframes fade{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+
+  .qmeta{display:flex;align-items:center;justify-content:space-between;
+    font-size:.72rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase;
+    color:var(--teal);margin-bottom:10px}
+  .qmeta span:last-child{color:var(--muted);letter-spacing:.04em}
+
+  .chip{display:inline-flex;align-items:center;gap:6px;background:rgba(31,122,119,.09);
+    color:var(--teal);font-size:.72rem;font-weight:800;letter-spacing:.09em;
+    text-transform:uppercase;padding:7px 12px;border-radius:999px;margin-bottom:16px}
+  .chip::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--teal)}
+
+  h1{font-family:var(--f-head);font-weight:700;color:var(--navy);
+    font-size:clamp(1.62rem,7.1vw,2.15rem);line-height:1.15;letter-spacing:-.015em;
+    margin-bottom:14px}
+  h1 em{font-style:normal;color:var(--teal)}
+  h2{font-family:var(--f-head);font-weight:700;color:var(--navy);
+    font-size:clamp(1.24rem,5.3vw,1.55rem);line-height:1.22;margin-bottom:8px}
+  .lede{color:var(--muted);font-size:1.02rem;line-height:1.5;margin-bottom:16px}
+  .lede--tight{margin-bottom:12px}
+
+  /* ---------- hero strip ---------- */
+  .shot{border-radius:15px;overflow:hidden;box-shadow:var(--sh-1);margin-bottom:18px}
+  .shot img{width:100%;height:128px;object-fit:cover}
+  .shot--tall img{height:190px}
+
+  /* ---------- trust bar ---------- */
+  .trustbar{display:grid;grid-template-columns:repeat(3,1fr);
+    background:#fff;border:1px solid var(--line);border-radius:14px;
+    box-shadow:var(--sh-1);overflow:hidden;margin:0 0 24px}
+  .tb{display:flex;flex-direction:column;align-items:center;justify-content:flex-start;
+    gap:5px;padding:13px 6px 12px;text-align:center;position:relative}
+  .tb + .tb::before{content:"";position:absolute;left:0;top:11px;bottom:11px;
+    width:1px;background:var(--line)}
+  .tb__top{height:28px;display:flex;align-items:center;justify-content:center}
+  .tb__stars{display:flex;gap:1.5px}
+  .tb__stars svg{width:14px;height:14px;fill:#f0a92b}
+  .tb__ic{width:24px;height:24px;stroke:var(--teal);fill:none;stroke-width:1.8;
+    stroke-linecap:round;stroke-linejoin:round}
+  .tb__ic--vuba{stroke:var(--vuba)}
+  .tb__t{font-size:.83rem;font-weight:800;color:var(--navy);line-height:1.15}
+  .tb__s{font-size:.7rem;color:var(--muted);line-height:1.2;letter-spacing:.01em}
+  .tb__g{display:inline-flex;align-items:center;gap:4px}
+  .tb__g svg{width:12px;height:12px;flex:none}
+  .tb__g span{font-size:.7rem;color:var(--muted);font-weight:700}
+
+  /* ---------- options ---------- */
+  .opts{display:grid;gap:11px}
+  .opt{display:flex;align-items:center;gap:12px;width:100%;text-align:left;
+    background:#fff;border:1.5px solid var(--line-2);border-radius:13px;
+    padding:14px 15px;transition:border-color .16s,box-shadow .16s,transform .16s}
+  .opt:hover{border-color:var(--teal);box-shadow:var(--sh-1);transform:translateY(-1px)}
+  .opt:active{transform:translateY(0)}
+  .opt__ic{flex:none;width:38px;height:38px;border-radius:10px;background:#f2f6f6;
+    display:flex;align-items:center;justify-content:center;color:var(--teal)}
+  .opt__ic svg{width:20px;height:20px;stroke:currentColor;fill:none;stroke-width:1.7;
+    stroke-linecap:round;stroke-linejoin:round}
+  .opt__sw{flex:none;width:52px;height:52px;border-radius:10px;
+    box-shadow:inset 0 0 0 1px rgba(11,41,71,.1)}
+  .opt__sw--grey{background:linear-gradient(135deg,#9aa3ab 0%,#6f7880 55%,#565f68 100%)}
+  .opt__sw--cream{background:linear-gradient(135deg,#e8dcc4 0%,#d3bf9c 55%,#b79b70 100%)}
+  .opt__sw--mix{background:conic-gradient(from 40deg,#6f7880,#d3bf9c,#a2582f,#565f68,#6f7880)}
+  .opt__tx{flex:1;min-width:0}
+  .opt__t{display:block;font-weight:700;color:var(--navy);font-size:1.03rem;line-height:1.3}
+  .opt__s{display:block;font-size:.88rem;color:var(--muted);line-height:1.35}
+  .opt__go{flex:none;color:var(--line-2);transition:color .16s,transform .16s}
+  .opt:hover .opt__go{color:var(--teal);transform:translateX(2px)}
+
+  /* ---------- buttons ---------- */
+  .btn{display:flex;align-items:center;justify-content:center;gap:8px;width:100%;
+    border-radius:999px;padding:16px 22px;font-weight:800;font-size:1.06rem;
+    text-decoration:none;transition:transform .16s,box-shadow .16s,background .16s}
+  .btn--go{background:linear-gradient(135deg,var(--clay),var(--clay-2));color:#fff;
+    box-shadow:0 8px 20px rgba(197,109,74,.28)}
+  .btn--go:hover{transform:translateY(-2px);box-shadow:0 12px 26px rgba(197,109,74,.36)}
+  .btn--go:disabled{opacity:.45;cursor:not-allowed;transform:none;box-shadow:none}
+  .btn--alt{background:#fff;border:1.5px solid var(--line-2);color:var(--navy-2)}
+  .btn--alt:hover{border-color:var(--teal);color:var(--teal)}
+  .btn--wa{background:linear-gradient(135deg,var(--wa),var(--wa-2));color:#fff}
+
+  .back{display:inline-flex;align-items:center;gap:5px;margin-top:16px;
+    font-size:.85rem;font-weight:700;color:var(--muted)}
+  .back:hover{color:var(--teal)}
+
+  /* ---------- card / form ---------- */
+  .card{background:#fff;border:1px solid var(--line);border-radius:16px;
+    padding:22px 19px;box-shadow:var(--sh-1)}
+  .fl{display:block;font-weight:700;font-size:.85rem;color:var(--navy);margin:13px 0 5px}
+  .fl:first-of-type{margin-top:0}
+  .in{width:100%;border:1.5px solid var(--line-2);border-radius:11px;padding:13px;
+    font-size:1rem;background:#fff;color:var(--ink);font-family:inherit}
+  .in::placeholder{color:#9aa8b8}
+  .in:focus{outline:none;border-color:var(--teal);box-shadow:0 0 0 3px rgba(31,122,119,.13)}
+  .in.bad{border-color:#d64535;background:#fffafa}
+  .tel{display:flex}
+  .tel__p{display:flex;align-items:center;padding:0 12px;border:1.5px solid var(--line-2);
+    border-right:0;border-radius:11px 0 0 11px;background:#f6f8fa;font-weight:700;
+    color:var(--muted);font-size:.95rem}
+  .tel .in{border-radius:0 11px 11px 0}
+
+  .cb{display:flex;gap:10px;align-items:flex-start;margin-top:12px;
+    font-size:.9rem;color:var(--muted);cursor:pointer;line-height:1.45}
+  .cb input{width:20px;height:20px;flex:none;margin-top:1px;accent-color:var(--teal);cursor:pointer}
+  .cb a{color:var(--teal);font-weight:700}
+  .warn{display:none;margin-top:12px;font-size:.85rem;color:#a3241a;background:#fdeeec;
+    border:1px solid #f3c6c1;border-radius:10px;padding:9px 11px}
+  .warn.on{display:block}
+
+  /* ---------- photo upload ---------- */
+  .up{position:relative;background:#fff;border:2px dashed var(--line-2);border-radius:15px;
+    padding:26px 18px;text-align:center;transition:border-color .16s,background .16s;cursor:pointer}
+  .up:hover,.up.drag{border-color:var(--teal);background:#f6faf9}
+  .up input{position:absolute;inset:0;width:100%;height:100%;opacity:0;cursor:pointer}
+  .up__ic{width:44px;height:44px;margin:0 auto 10px;border-radius:12px;background:rgba(31,122,119,.09);
+    display:flex;align-items:center;justify-content:center;color:var(--teal)}
+  .up__ic svg{width:22px;height:22px;stroke:currentColor;fill:none;stroke-width:1.7;
+    stroke-linecap:round;stroke-linejoin:round}
+  .up b{display:block;color:var(--navy);font-size:1rem}
+  .up span{display:block;font-size:.86rem;color:var(--muted);margin-top:3px}
+  .up.has{border-style:solid;border-color:var(--teal);padding:12px}
+  .up__prev{display:none;border-radius:11px;overflow:hidden;position:relative}
+  .up.has .up__prev{display:block}
+  .up.has .up__empty{display:none}
+  .up__prev img{width:100%;height:180px;object-fit:cover}
+  .up__badge{position:absolute;left:8px;bottom:8px;background:rgba(31,122,119,.92);color:#fff;
+    font-size:.7rem;font-weight:800;letter-spacing:.07em;text-transform:uppercase;
+    padding:4px 9px;border-radius:999px}
+  .up__swap{margin-top:9px;font-size:.85rem;font-weight:700;color:var(--teal);text-align:center}
+
+  /* ---------- trust ---------- */
+  .trust{display:flex;flex-wrap:wrap;gap:6px;margin-top:16px}
+  .trust span{background:#fff;border:1px solid var(--line);border-radius:999px;
+    padding:7px 12px;font-size:.74rem;font-weight:700;color:var(--navy-2)}
+
+  /* ---------- next steps ---------- */
+  .nx{display:flex;gap:12px;align-items:flex-start;padding:12px 0;border-bottom:1px solid var(--line)}
+  .nx:last-child{border-bottom:0;padding-bottom:0}
+  .nx__n{flex:none;width:27px;height:27px;border-radius:50%;background:var(--teal);color:#fff;
+    display:flex;align-items:center;justify-content:center;font-weight:800;font-size:.8rem}
+  .nx b{display:block;color:var(--navy);font-size:.93rem}
+  .nx p{font-size:.85rem;color:var(--muted);line-height:1.45}
+
+  .foot{font-size:.78rem;color:var(--muted);text-align:center;margin-top:22px;line-height:1.6}
+  .foot a{color:var(--teal);font-weight:700;text-decoration:none}
+
+  .callalt{text-align:center;margin-top:14px;font-size:.94rem;color:var(--muted)}
+  .callalt a{color:var(--teal);font-weight:800;text-decoration:none;white-space:nowrap}
+  .orline{display:flex;align-items:center;gap:12px;margin:16px 0;
+    color:var(--muted);font-size:.8rem;font-weight:800;letter-spacing:.06em;
+    text-transform:uppercase}
+  .orline::before,.orline::after{content:"";flex:1;height:1px;background:var(--line)}
+  .divider{height:1px;background:var(--line);margin:46px 0 38px}
+
+  /* ---------- visualisation explainer ---------- */
+  .vis{background:#fff;border:1px solid var(--line);
+    border-radius:15px;padding:18px 17px;box-shadow:var(--sh-1)}
+  .vis h3{font-family:var(--f-head);font-weight:700;color:var(--navy);
+    font-size:1.08rem;margin-bottom:5px}
+  .vis p{font-size:.94rem;color:var(--muted);line-height:1.5}
+  .vis__pair{display:grid;grid-template-columns:1fr auto 1fr;align-items:center;
+    gap:9px;margin-top:12px}
+  .vis__pic{position:relative;border-radius:11px;overflow:hidden;
+    box-shadow:inset 0 0 0 1px rgba(11,41,71,.08)}
+  .vis__pic img{width:100%;height:104px;object-fit:cover}
+  .vis__tag{position:absolute;left:6px;bottom:6px;background:rgba(11,41,71,.82);
+    color:#fff;font-size:.66rem;font-weight:800;letter-spacing:.07em;
+    text-transform:uppercase;padding:3px 7px;border-radius:999px}
+  .vis__tag--a{background:rgba(31,122,119,.92)}
+  .vis__arrow{color:var(--teal);flex:none}
+</style>
+</head>
+
+<body>
+
+<header class="bar">
+  <div class="bar__in"><img src="/images/lp/logo-sm.webp" alt="ResinPro Cheshire" width="420" height="200" /></div>
+  <div class="track"><div class="track__fill" id="fill"></div></div>
+</header>
+
+<div class="wrap">
+
+  <!-- ══ INTRO ══ -->
+  <section class="step on" data-step="intro">
+    <span class="chip">Free &middot; takes about a minute</span>
+    <h1>Get a <em>free visualisation</em> of your own driveway</h1>
+    <p class="lede lede--tight">Answer three quick questions and add a photo of your driveway. We&rsquo;ll edit it to show your home with resin down &mdash; free, no obligation.</p>
+
+    <div class="vis" style="margin-bottom:18px">
+      <div class="vis__pair" style="margin-top:0">
+        <div class="vis__pic">
+          <img src="/images/lp/vis-before.webp" alt="Driveway before resin" width="520" height="390" fetchpriority="high" />
+          <span class="vis__tag">Before</span>
+        </div>
+        <svg class="vis__arrow" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        <div class="vis__pic">
+          <img src="/images/lp/vis-after.webp" alt="The same driveway visualised in resin" width="520" height="390" fetchpriority="high" />
+          <span class="vis__tag vis__tag--a">After</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="opts">
+      <button class="btn btn--go" data-go="q1">Get my free visualisation</button>
+    </div>
+
+    <p class="callalt">Rather just talk? We&rsquo;re right here at the stand &mdash; or call <a href="tel:+441244960112">01244 960112</a></p>
+
+    <div class="trustbar" style="margin:24px 0 0">
+      <div class="tb">
+        <span class="tb__top"><span class="tb__stars" role="img" aria-label="Rated 5 out of 5">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+        </span></span>
+        <span class="tb__t">5.0 rated</span>
+        <span class="tb__g">
+          <svg viewBox="0 0 48 48" aria-hidden="true"><path fill="#4285F4" d="M45.1 24.5c0-1.6-.1-2.7-.4-3.9H24v7.1h12.1c-.2 1.8-1.6 4.5-4.5 6.3l6.9 5.3c4.1-3.8 6.6-9.4 6.6-14.8z"/><path fill="#34A853" d="M24 46c5.9 0 10.9-2 14.5-5.3l-6.9-5.3c-1.8 1.3-4.3 2.2-7.6 2.2-5.8 0-10.8-3.8-12.5-9.1l-7.1 5.5C8 41.3 15.4 46 24 46z"/><path fill="#FBBC05" d="M11.5 28.5c-.5-1.3-.7-2.7-.7-4.1s.3-2.8.7-4.1l-7.1-5.5C2.9 17.7 2 20.7 2 24s.9 6.3 2.4 9.2l7.1-4.7z"/><path fill="#EA4335" d="M24 10.6c4.1 0 6.9 1.8 8.5 3.3l6.2-6C34.9 4.4 29.9 2 24 2 15.4 2 8 6.7 4.4 14.8l7.1 5.5c1.7-5.3 6.7-9.7 12.5-9.7z"/></svg>
+          <span>Google</span>
+        </span>
+      </div>
+      <div class="tb">
+        <span class="tb__top"><svg class="tb__ic tb__ic--vuba" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.6l2.4 1.5 2.8-.3 1.2 2.6 2.4 1.5-.7 2.7.7 2.7-2.4 1.5-1.2 2.6-2.8-.3L12 18.9l-2.4-1.5-2.8.3-1.2-2.6-2.4-1.5.7-2.7-.7-2.7 2.4-1.5 1.2-2.6 2.8.3z"/><path d="M9.2 10.9l2 2 3.6-3.7"/></svg></span>
+        <span class="tb__t">Vuba approved</span>
+        <span class="tb__s">installer</span>
+      </div>
+      <div class="tb">
+        <span class="tb__top"><svg class="tb__ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3l7.5 3v5.6c0 4.4-3.1 7.8-7.5 9.4-4.4-1.6-7.5-5-7.5-9.4V6L12 3z"/><path d="M9 12.2l2.1 2.1 4-4.2"/></svg></span>
+        <span class="tb__t">25-year</span>
+        <span class="tb__s">Vuba guarantee</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ Q1 · COLOUR ══ -->
+  <section class="step" data-step="q1" data-q="1">
+    <div class="qmeta"><span>Question 1 of 3</span><span>33%</span></div>
+    <h2>Which colours are you drawn to?</h2>
+    <p class="lede">So we visualise it in a blend you&rsquo;d actually pick.</p>
+    <div class="opts">
+      <button class="opt" data-go="q2" data-set="colour:Greys and silvers">
+        <span class="opt__sw opt__sw--grey"></span>
+        <span class="opt__tx"><span class="opt__t">Greys &amp; silvers</span><span class="opt__s">Modern, cool tones</span></span>
+        <span class="opt__go"><svg viewBox="0 0 24 24" width="18" height="18" stroke="currentColor" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg></span>
+      </button>
+      <button class="opt" data-go="q2" data-set="colour:Creamy, warm tones">
+        <span class="opt__sw opt__sw--cream"></span>
+        <span class="opt__tx"><span class="opt__t">Creamy, warm tones</span><span class="opt__s">Sandy, natural blends</span></span>
+        <span class="opt__go"><svg viewBox="0 0 24 24" width="18" height="18" stroke="currentColor" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg></span>
+      </button>
+      <button class="opt" data-go="q2" data-set="colour:Something else">
+        <span class="opt__sw opt__sw--mix"></span>
+        <span class="opt__tx"><span class="opt__t">Something else</span><span class="opt__s">Reds, browns, a mix &mdash; surprise me</span></span>
+        <span class="opt__go"><svg viewBox="0 0 24 24" width="18" height="18" stroke="currentColor" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg></span>
+      </button>
+      <button class="opt" data-go="q2" data-set="colour:Not sure yet">
+        <span class="opt__ic"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M9.5 9.5a2.6 2.6 0 015 .9c0 1.7-2.5 2.1-2.5 3.6"/><path d="M12 17.5h.01"/></svg></span>
+        <span class="opt__tx"><span class="opt__t">Not sure yet</span><span class="opt__s">We&rsquo;ll pick a popular blend</span></span>
+        <span class="opt__go"><svg viewBox="0 0 24 24" width="18" height="18" stroke="currentColor" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg></span>
+      </button>
+    </div>
+    <button class="back" data-back="intro">&larr; Back</button>
+  </section>
+
+  <!-- ══ Q2 · SIZE ══ -->
+  <section class="step" data-step="q2" data-q="2">
+    <div class="qmeta"><span>Question 2 of 3</span><span>66%</span></div>
+    <h2>Roughly how big is the area?</h2>
+    <p class="lede">A rough idea is fine &mdash; we measure properly later.</p>
+    <div class="opts">
+      <button class="opt" data-go="q3" data-set="size:Small - 1-2 cars, up to 30m2">
+        <span class="opt__tx"><span class="opt__t">Small</span><span class="opt__s">1&ndash;2 cars &middot; up to 30m&sup2;</span></span>
+        <span class="opt__go"><svg viewBox="0 0 24 24" width="18" height="18" stroke="currentColor" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg></span>
+      </button>
+      <button class="opt" data-go="q3" data-set="size:Medium - 2-3 cars, 30-50m2">
+        <span class="opt__tx"><span class="opt__t">Medium</span><span class="opt__s">2&ndash;3 cars &middot; 30&ndash;50m&sup2;</span></span>
+        <span class="opt__go"><svg viewBox="0 0 24 24" width="18" height="18" stroke="currentColor" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg></span>
+      </button>
+      <button class="opt" data-go="q3" data-set="size:Large - 3-4 cars, 50-80m2">
+        <span class="opt__tx"><span class="opt__t">Large</span><span class="opt__s">3&ndash;4 cars &middot; 50&ndash;80m&sup2;</span></span>
+        <span class="opt__go"><svg viewBox="0 0 24 24" width="18" height="18" stroke="currentColor" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg></span>
+      </button>
+      <button class="opt" data-go="q3" data-set="size:Extra large - 4+ cars, 80m2+">
+        <span class="opt__tx"><span class="opt__t">Extra large</span><span class="opt__s">4+ cars &middot; 80m&sup2; and over</span></span>
+        <span class="opt__go"><svg viewBox="0 0 24 24" width="18" height="18" stroke="currentColor" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg></span>
+      </button>
+      <button class="opt" data-go="q3" data-set="size:Not sure">
+        <span class="opt__tx"><span class="opt__t">Not sure</span><span class="opt__s">We&rsquo;ll measure it for you</span></span>
+        <span class="opt__go"><svg viewBox="0 0 24 24" width="18" height="18" stroke="currentColor" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg></span>
+      </button>
+    </div>
+    <button class="back" data-back="q1">&larr; Back</button>
+  </section>
+
+  <!-- ══ Q3 · PHOTO ══ -->
+  <section class="step" data-step="q3" data-q="3">
+    <div class="qmeta"><span>Question 3 of 3</span><span>100%</span></div>
+    <h2>Add a photo of your driveway</h2>
+    <p class="lede">Stand back so we can see the whole area &mdash; an old photo from your gallery works too.</p>
+
+    <div class="up" id="up">
+      <input type="file" id="photo" accept="image/*" aria-label="Upload a photo of your driveway" />
+      <div class="up__empty">
+        <span class="up__ic"><svg viewBox="0 0 24 24"><path d="M4 8h3l2-3h6l2 3h3v11H4z"/><circle cx="12" cy="13" r="3.4"/></svg></span>
+        <b>Tap to take or choose a photo</b>
+        <span>JPG, PNG or HEIC &middot; we shrink it automatically</span>
+      </div>
+      <div class="up__prev">
+        <img id="prevImg" alt="Your driveway photo" />
+        <span class="up__badge">Photo added</span>
+      </div>
+    </div>
+    <p class="up__swap" id="swapHint" style="display:none">Tap the photo to swap it</p>
+
+    <div class="opts" style="margin-top:14px">
+      <button class="btn btn--go" id="photoNext" data-go="details" disabled>Continue</button>
+      <button class="btn btn--alt" data-go="details" data-skipphoto="1">Skip &mdash; I&rsquo;ll send one on WhatsApp</button>
+    </div>
+    <button class="back" data-back="q2">&larr; Back</button>
+  </section>
+
+  <!-- ══ DETAILS ══ -->
+  <section class="step" data-step="details">
+    <span class="chip">Last step</span>
+    <h2>Where shall we send your visualisation?</h2>
+    <p class="lede lede--tight">We usually send it back the same day. No hard sell.</p>
+
+    <div class="card">
+      <form id="visForm" novalidate>
+        <input type="hidden" name="access_key" value="eef675c6-b781-4b3a-b428-0fb99372f295" />
+        <input type="hidden" name="subject" value="New visualisation lead - event QR page" />
+        <input type="hidden" name="from_page" value="event QR landing page (/event/)" />
+        <input type="checkbox" name="botcheck" style="display:none" tabindex="-1" autocomplete="off" />
+        <input type="hidden" name="Colour preference" id="f_colour" />
+        <input type="hidden" name="Driveway size" id="f_size" />
+        <input type="hidden" name="Photo" id="f_photo" value="Not uploaded" />
+
+        <label class="fl" for="name">Full name</label>
+        <input class="in" type="text" id="name" name="name" autocomplete="name" placeholder="Your full name" required />
+
+        <label class="fl" for="email">Email address</label>
+        <input class="in" type="email" id="email" name="email" autocomplete="email" placeholder="you@example.com" required />
+
+        <label class="fl" for="phone">Mobile number</label>
+        <div class="tel"><span class="tel__p">+44</span>
+          <input class="in" type="tel" id="phone" name="phone" autocomplete="tel" placeholder="7700 900000" required /></div>
+
+        <label class="fl" for="postcode">Postcode</label>
+        <input class="in" type="text" id="postcode" name="postcode" autocomplete="postal-code" placeholder="CH4 0AA" autocapitalize="characters" spellcheck="false" required />
+
+        <label class="cb"><input type="checkbox" id="cb1" /><span>I&rsquo;ve read and accept the <a href="/privacy/" target="_blank" rel="noopener">privacy policy</a>.</span></label>
+        <label class="cb"><input type="checkbox" id="cb2" /><span>You can contact me about my visualisation.</span></label>
+
+        <div class="warn" id="warn">Please fill in every field and tick both boxes to continue.</div>
+
+        <button class="btn btn--go" type="submit" id="submitBtn" style="margin-top:15px">Send me my free visualisation &rarr;</button>
+      </form>
+    </div>
+
+    <div class="orline" aria-hidden="true"><span>or</span></div>
+
+    <a class="btn btn--wa" id="waDetails" href="https://wa.me/447852827418?text=Hi%20ResinPro%20Cheshire,%20I%27d%20like%20a%20free%20visualisation%20of%20my%20driveway." target="_blank" rel="noopener noreferrer">
+      <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+      Send photo &amp; details on WhatsApp
+    </a>
+
+    <div class="trust">
+      <span>15 years in construction</span><span>Family run</span><span>Fully insured</span>
+    </div>
+    <button class="back" data-back="q3">&larr; Back</button>
+  </section>
+
+  <!-- ══ DONE ══ -->
+  <section class="step" data-step="done">
+    <span class="chip">Got it</span>
+    <h2>Thanks &mdash; your visualisation is on the way</h2>
+    <p class="lede lede--tight">We&rsquo;ll edit your photo and send it back, usually the same day. Come and say hello at the stand while you&rsquo;re here!</p>
+
+    <picture class="shot shot--tall">
+      <source srcset="/images/vuba/poseidon-01.webp" type="image/webp">
+      <img src="/images/vuba/poseidon-01.jpg" alt="Finished resin bound driveway" width="1200" height="800" loading="lazy" decoding="async" />
+    </picture>
+
+    <div class="card" style="margin-top:14px">
+      <h2 style="font-size:1.05rem;margin-bottom:2px">What happens next</h2>
+      <div class="nx"><span class="nx__n">1</span><div><b>We edit your photo</b><p>Your own driveway, shown in the colour you picked.</p></div></div>
+      <div class="nx"><span class="nx__n">2</span><div><b>We send it over</b><p>By WhatsApp or email, usually the same day.</p></div></div>
+      <div class="nx"><span class="nx__n">3</span><div><b>Like what you see?</b><p>We&rsquo;ll pop out for a free survey and a fixed written quote. No pressure either way.</p></div></div>
+    </div>
+
+    <div class="opts" style="margin-top:14px">
+      <a class="btn btn--wa" href="https://wa.me/447852827418?text=Hi%20ResinPro%20Cheshire,%20I%20just%20requested%20a%20visualisation%20at%20your%20stand." target="_blank" rel="noopener noreferrer">Message us on WhatsApp</a>
+      <a class="btn btn--alt" href="/" >Browse our work</a>
+    </div>
+  </section>
+
+  <p class="foot">ResinPro Cheshire &middot; Penyffordd &middot; Cheshire &amp; North Wales<br />
+  <a href="tel:+441244960112">01244 960112</a> &middot; <a href="/privacy/">Privacy</a></p>
+
+</div>
+
+<script>
+(function(){
+  'use strict';
+  var answers = {}, steps = {}, photoBlob = null, photoName = 'driveway.jpg';
+  document.querySelectorAll('.step').forEach(function(s){ steps[s.dataset.step] = s; });
+  var fill = document.getElementById('fill');
+
+  function show(name, push){
+    if (!steps[name]) name = 'intro';
+    Object.keys(steps).forEach(function(k){ steps[k].classList.toggle('on', k === name); });
+    var q = steps[name].dataset.q;
+    var done = { details:1, done:1 };
+    fill.style.width = q ? Math.round((parseInt(q,10)/3)*100) + '%'
+                         : (done[name] ? '100%' : '0%');
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+    if (push !== false && window.history && history.pushState) {
+      history.pushState({ step: name }, '');
+    }
+  }
+
+  if (window.history && history.replaceState) {
+    history.replaceState({ step: 'intro' }, '');
+    window.addEventListener('popstate', function (e) {
+      show((e.state && e.state.step) || 'intro', false);
+    });
+  }
+
+  document.addEventListener('click', function(e){
+    var el = e.target.closest('[data-go],[data-back]');
+    if (!el || el.tagName === 'A') return;
+    e.preventDefault();
+    if (el.disabled) return;
+    if (el.dataset.set){
+      var b = el.dataset.set.split(':');
+      answers[b[0]] = b.slice(1).join(':');
+    }
+    if (el.dataset.skipphoto){ photoBlob = null; }
+    var to = el.dataset.go || el.dataset.back;
+    if (to === 'details'){
+      var fc = document.getElementById('f_colour'); fc.value = answers.colour || '';
+      var fs = document.getElementById('f_size'); fs.value = answers.size || '';
+      document.getElementById('f_photo').value = photoBlob ? 'Uploaded with this form' : 'Not uploaded - may follow on WhatsApp';
+      var wa = document.getElementById('waDetails');
+      if (wa) {
+        var msg = 'Hi ResinPro Cheshire, I\u2019d like a free visualisation of my driveway.';
+        var bits = [];
+        if (answers.colour) bits.push('Colour preference: ' + answers.colour);
+        if (answers.size) bits.push('Size: ' + answers.size);
+        bits.push('(I\u2019ll attach a photo of the driveway here)');
+        msg += '\n' + bits.join('\n');
+        wa.setAttribute('href', 'https://wa.me/447852827418?text=' + encodeURIComponent(msg));
+      }
+    }
+    show(to);
+  });
+
+  /* ---------- photo handling: preview + resize so uploads stay small ---------- */
+  var up = document.getElementById('up'),
+      input = document.getElementById('photo'),
+      prevImg = document.getElementById('prevImg'),
+      nextBtn = document.getElementById('photoNext'),
+      swapHint = document.getElementById('swapHint');
+
+  input.addEventListener('change', function(){
+    var file = input.files && input.files[0];
+    if (!file) return;
+    var url = URL.createObjectURL(file);
+    var img = new Image();
+    img.onload = function(){
+      var MAX = 1600;
+      var w = img.width, h = img.height;
+      if (w > MAX || h > MAX){
+        var r = Math.min(MAX / w, MAX / h);
+        w = Math.round(w * r); h = Math.round(h * r);
+      }
+      var c = document.createElement('canvas');
+      c.width = w; c.height = h;
+      c.getContext('2d').drawImage(img, 0, 0, w, h);
+      c.toBlob(function(blob){
+        photoBlob = blob || file;
+        photoName = (file.name || 'driveway').replace(/\.[^.]+$/, '') + '.jpg';
+        prevImg.src = c.toDataURL('image/jpeg', .7);
+        up.classList.add('has');
+        swapHint.style.display = 'block';
+        nextBtn.disabled = false;
+        URL.revokeObjectURL(url);
+      }, 'image/jpeg', .82);
+    };
+    img.onerror = function(){
+      /* not an image the browser can decode (some HEICs) - send the raw file */
+      photoBlob = file; photoName = file.name || 'driveway-photo';
+      up.classList.add('has');
+      prevImg.removeAttribute('src');
+      swapHint.style.display = 'block';
+      nextBtn.disabled = false;
+      URL.revokeObjectURL(url);
+    };
+    img.src = url;
+  });
+
+  /* ---------- submit ---------- */
+  var form = document.getElementById('visForm'),
+      btn  = document.getElementById('submitBtn'),
+      warn = document.getElementById('warn');
+
+  form.addEventListener('submit', function(e){
+    e.preventDefault();
+    var ok = true;
+    ['name','email','phone','postcode'].forEach(function(id){
+      var f = document.getElementById(id), bad = !f.value.trim();
+      if (id === 'email' && f.value && f.value.indexOf('@') === -1) bad = true;
+      f.classList.toggle('bad', bad);
+      if (bad) ok = false;
+    });
+    if (!document.getElementById('cb1').checked) ok = false;
+    if (!document.getElementById('cb2').checked) ok = false;
+    warn.classList.toggle('on', !ok);
+    if (!ok) return;
+
+    btn.disabled = true; btn.textContent = 'Sending\u2026';
+    var fd = new FormData(form);
+    if (photoBlob) fd.append('attachment', photoBlob, photoName);
+
+    fetch('https://api.web3forms.com/submit', { method:'POST', body:fd })
+      .then(function(r){ return r.json(); })
+      .then(function(j){
+        if (j.success){
+          if (window.gtag) gtag('event','generate_lead',{ form:'event QR visualisation' });
+          show('done');
+        } else if (photoBlob) {
+          /* attachment may be rejected on some plans - retry without it so the lead isn't lost */
+          photoBlob = null;
+          fd = new FormData(form);
+          fd.append('Photo', 'Upload failed - please ask them to WhatsApp a photo');
+          return fetch('https://api.web3forms.com/submit', { method:'POST', body:fd })
+            .then(function(r){ return r.json(); })
+            .then(function(j2){ if (j2.success){ show('done'); } else { failed(); } });
+        } else { failed(); }
+      })
+      .catch(failed);
+
+    function failed(){
+      btn.disabled = false; btn.textContent = 'Send me my free visualisation \u2192';
+      warn.textContent = 'Something went wrong. Please try again, or message us on WhatsApp below.';
+      warn.classList.add('on');
+    }
+  });
+})();
+</script>
+</body>
+</html>
